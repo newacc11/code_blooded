@@ -1,0 +1,63 @@
+{% extends 'study_program/master.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+<div class="login-row">
+    <div class="login-bg"></div>
+    <div class="login-overlay">
+        <div class="login-header">
+            <img src="{% static 'img/logo.png' %}" alt="logo">
+            <h2>RealTikTok Promotion</h2>
+{#            <a href="https://storieviews.com/faq">FAQ</a>#}
+            <a href="https://t.me/buytiktokfollowerspro">Live Support</a>
+        </div>
+    <div class="login-container">
+
+
+            <div class="container">
+                <div class="">
+                    <h1>Login</h1>
+                    <p>Use login credentials you have received after the purchase.</p>
+                    <div class="">
+                        <form method="post" action="{% url 'login' %}" class="account-login-form">
+                            {% csrf_token %}
+                            <div class="login-form-input">
+                                <input type="text" class="form--input" name="username" autofocus id="username"
+                                       aria-describedby="emailHelp"
+                                       placeholder="User login">
+                                <span class="login-icon"></span>
+                            </div>
+                            <div class="login-form-input">
+                                <input type="password" name="password" class="form--input" id="password"
+                                       placeholder="Password">
+                                <span class="pass-icon"></span>
+                            </div>
+                            <input type="hidden" name="next" value="{{ next }}"/>
+                            <button type="submit" class="login--btn active">LOGIN</button>
+                        </form>
+                        <div class="login-errors">
+                            {% if form.errors %}
+                                <p class="text-danger">Your username and password didn't match. Please try again.</p>
+                            {% endif %}
+
+                            {% if next %}
+                                {% if user.is_authenticated %}
+                                    <p class="text-danger">Your account doesn't have access to this page. To proceed,
+                                        please login with an account that has access.</p>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block footer %}
+    <div></div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'master.html' %}
+{% block title %}Logout{% endblock %}
+
+{% block body %}
+    <div style="text-align: center">
+     <div class="col-md-12">
+        <p>Logged out!</p>
+    </div>
+    <div class="container-my">
+        <a href="{% url 'login' %}">Click here to login again.</a>
+    </div>
+    </div>
+    <script>
+         document.location.href = '/lk/profile/login/'
+    </script>
+
+{% endblock %}
