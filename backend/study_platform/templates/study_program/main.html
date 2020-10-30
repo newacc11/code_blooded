@@ -1,0 +1,20 @@
+{% extends 'study_program/master.html' %}
+
+{% block title %}
+    Ваши курсы
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h2>Контесты</h2>
+    <ul>
+        {% for object in object_list %}
+            <li>
+                <b>{{ object.title }}</b> - {{ object.description }}
+            </li>
+          {% endfor %}
+    </ul>
+
+    </div>
+    <div class=""></div>
+{% endblock %}

@@ -34,18 +34,11 @@ admin.site.unregister(models.User)
 admin.site.register(models.User, UserAdmin)
 
 
-class GroupAdmin(admin.ModelAdmin):
+class ContestAdmin(admin.ModelAdmin):
     pass
 
 
-admin.site.register(models.Group, GroupAdmin)
-
-
-class CurseAdmin(admin.ModelAdmin):
-    pass
-
-
-admin.site.register(models.Curse, CurseAdmin)
+admin.site.register(models.Contest, ContestAdmin)
 
 
 class TaskAdmin(admin.ModelAdmin):
@@ -55,11 +48,11 @@ class TaskAdmin(admin.ModelAdmin):
 admin.site.register(models.Task, TaskAdmin)
 
 
-class ConditionAdmin(admin.ModelAdmin):
+class TestAdmin(admin.ModelAdmin):
     pass
 
 
-admin.site.register(models.Condition, ConditionAdmin)
+admin.site.register(models.Test, TestAdmin)
 
 
 class CheckAdmin(admin.ModelAdmin):
@@ -67,3 +60,11 @@ class CheckAdmin(admin.ModelAdmin):
 
 
 admin.site.register(models.Check, CheckAdmin)
+
+
+class ClassAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(models.Class, ClassAdmin)
+
