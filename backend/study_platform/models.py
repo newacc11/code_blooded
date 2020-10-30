@@ -51,6 +51,7 @@ class Contest(models.Model):
     classes = models.ManyToManyField(Class, blank=True)
     title = models.CharField(max_length=300)
     description = models.TextField()
+    is_public = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.title}"
